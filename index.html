@@ -8,7 +8,7 @@
         <script src="node_modules/reflect-metadata/reflect.src/resources/themes/default/js"></script>
         <script src="node_modules/systemsrc/resources/themes/default/js/dist/system.src.src/resources/themes/default/js"></script>
         <script>window.autoBootstrap = false; </script>
-        <script src="systemsrc/resources/themes/default/js.config.src/resources/themes/default/js"></script>
+        <script src="src/resources/themes/default/js.config.src/resources/themes/default/js"></script>
         
     </head>
     <body>
@@ -45,12 +45,12 @@
     <link href="src/resources/themes/default/css/icheck/flat/green.css" rel="stylesheet" />
     <link href="src/resources/themes/default/css/floatexamples.css" rel="stylesheet" type="text/css" />
 
-    <script src="node_modules/core-src/resources/themes/default/js/client/shim.min.src/resources/themes/default/js"></script>
-    <script src="node_modules/zone.src/resources/themes/default/js/dist/zone.src/resources/themes/default/js"></script>
-    <script src="node_modules/reflect-metadata/reflect.src/resources/themes/default/js"></script>
-    <script src="node_modules/systemsrc/resources/themes/default/js/dist/system.src.src/resources/themes/default/js"></script>
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script>window.autoBootstrap = false; </script>
-<script src="systemsrc/resources/themes/default/js.config.src/resources/themes/default/js"></script>
+<script src="systemjs.config.js"></script>
 </head>
 
 
@@ -232,8 +232,8 @@
 <div class="right_col" role="main">
     <default-page>default page will be here.</default-page>
     <script>
-            System.import("src/main").catch(function (error) { console.log(error); });
-        </script>
+        System.import("src/main").catch(function (error) { console.log(error); });
+    </script>
 <!-- footer content -->
 
 <footer>
