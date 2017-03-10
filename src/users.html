@@ -1,3 +1,30 @@
 <div>
     <h1>This is User Page</h1>
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Basic Tables <small>basic table subtitle</small></h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Avatar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>
+                            <img src="src/resources/themes/default/images/{{user.avatar}}" style="max-width: 50px;" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 </div>

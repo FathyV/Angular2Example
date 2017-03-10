@@ -8,6 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 let Users = class Users {
+    constructor() {
+        this.users = [
+            { firstName: "Hung", lastName: "To", avatar: "01.jpg" },
+            { firstName: "Thu", lastName: "Ton", avatar: "02.jpg" },
+            { firstName: "Hai", lastName: "Nguyen", avatar: "03.jpg" }
+        ];
+    }
 };
 Users = __decorate([
     core_1.Component({
