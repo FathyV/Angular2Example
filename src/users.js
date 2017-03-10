@@ -15,6 +15,9 @@ let Users = class Users {
             { firstName: "Hai", lastName: "Nguyen", avatar: "03.jpg" }
         ];
     }
+    showUserSummary(user) {
+        this.selectedUser = user;
+    }
 };
 Users = __decorate([
     core_1.Component({
