@@ -12,12 +12,13 @@ const forms_1 = require("@angular/forms");
 const defaultPage_1 = require("./defaultPage");
 const securityRoutes_1 = require("./securityRoutes");
 const users_1 = require("./users");
+const userSummary_1 = require("./userSummary");
 let SecurityModule = class SecurityModule {
 };
 SecurityModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, securityRoutes_1.SecurityRoutes],
-        declarations: [defaultPage_1.DefaultPage, users_1.Users],
+        declarations: [defaultPage_1.DefaultPage, users_1.Users, userSummary_1.UserSummary],
         bootstrap: [defaultPage_1.DefaultPage]
     })
 ], SecurityModule);

@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const router_1 = require("@angular/router");
 const core_1 = require("@angular/core");
 const users_1 = require("./users");
+const userService_1 = require("./userService");
 let routes = [
     { path: "", redirectTo: "users", pathMatch: 'full' },
     { path: "users", component: users_1.Users },
@@ -18,7 +19,8 @@ let SecurityRoutes = class SecurityRoutes {
 SecurityRoutes = __decorate([
     core_1.NgModule({
         imports: [router_1.RouterModule.forRoot(routes)],
-        exports: [router_1.RouterModule]
+        exports: [router_1.RouterModule],
+        providers: [userService_1.UserService]
     })
 ], SecurityRoutes);
 exports.SecurityRoutes = SecurityRoutes;

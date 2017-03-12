@@ -10,25 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const userService_1 = require("./userService");
-let Users = class Users {
-    constructor(userService) {
-        this.users = [];
-        this.userService = userService;
-        this.users = userService.getUsers();
+let UserSummary = class UserSummary {
+    constructor() {
+        this.firstName = null;
+        this.firstNameChange = new core_1.EventEmitter();
     }
-    showUserSummary(user) {
-        this.selectedUser = user;
-    }
-    onFirstNameChanged(newValue) {
-        this.selectedUser.firstName = newValue;
+    onFirstNameChanged() {
+        this.firstNameChange.emit(this.firstName);
     }
 };
-Users = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], UserSummary.prototype, "firstName", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], UserSummary.prototype, "firstNameChange", void 0);
+UserSummary = __decorate([
     core_1.Component({
-        templateUrl: "src/users.html"
-    }),
-    __metadata("design:paramtypes", [userService_1.UserService])
-], Users);
-exports.Users = Users;
-//# sourceMappingURL=users.js.map
+        selector: "user-summary",
+        templateUrl: "src/userSummary.html"
+    })
+], UserSummary);
+exports.UserSummary = UserSummary;
+//# sourceMappingURL=userSummary.js.map
