@@ -10,33 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const userService_1 = require("./userService");
-const router_1 = require("@angular/router");
-let Users = class Users {
-    constructor(userService, router) {
-        this.users = [];
-        this.router = router;
-        this.userService = userService;
-        //this.users = userService.getUsers();
-        userService.getUsers().subscribe(users => {
-            this.users = users;
-        });
-        // userService.getUsers().then(users => {
-        //     this.users = users;
-        // });
-    }
-    showUserSummary(user) {
-        this.selectedUser = user;
-    }
-    onAddButtonClicked() {
-        this.router.navigate(["/addNewUser"]);
+let FormButton = class FormButton {
+    constructor() {
+        this.cls = null;
+        this.label = null;
     }
 };
-Users = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FormButton.prototype, "cls", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FormButton.prototype, "label", void 0);
+FormButton = __decorate([
     core_1.Component({
-        templateUrl: "src/users.html"
-    }),
-    __metadata("design:paramtypes", [userService_1.UserService, router_1.Router])
-], Users);
-exports.Users = Users;
-//# sourceMappingURL=users.js.map
+        selector: "form-button",
+        templateUrl: "src/formButton.html"
+    })
+], FormButton);
+exports.FormButton = FormButton;
+//# sourceMappingURL=formButton.js.map

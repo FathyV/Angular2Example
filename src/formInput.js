@@ -10,33 +10,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const userService_1 = require("./userService");
-const router_1 = require("@angular/router");
-let Users = class Users {
-    constructor(userService, router) {
-        this.users = [];
-        this.router = router;
-        this.userService = userService;
-        //this.users = userService.getUsers();
-        userService.getUsers().subscribe(users => {
-            this.users = users;
-        });
-        // userService.getUsers().then(users => {
-        //     this.users = users;
-        // });
+let FormInput = class FormInput {
+    constructor() {
+        this.value = null;
+        this.label = null;
+        this.valueChange = new core_1.EventEmitter();
     }
-    showUserSummary(user) {
-        this.selectedUser = user;
-    }
-    onAddButtonClicked() {
-        this.router.navigate(["/addNewUser"]);
+    onValueChanged() {
+        this.valueChange.emit(this.value);
     }
 };
-Users = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FormInput.prototype, "value", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FormInput.prototype, "label", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], FormInput.prototype, "valueChange", void 0);
+FormInput = __decorate([
     core_1.Component({
-        templateUrl: "src/users.html"
-    }),
-    __metadata("design:paramtypes", [userService_1.UserService, router_1.Router])
-], Users);
-exports.Users = Users;
-//# sourceMappingURL=users.js.map
+        selector: "form-input",
+        templateUrl: "src/formInput.html"
+    })
+], FormInput);
+exports.FormInput = FormInput;
+//# sourceMappingURL=formInput.js.map

@@ -1,9 +1,13 @@
+import { HttpConnector } from "./httpConnector";
+import { Injectable } from "@angular/core";
+
+@Injectable()
 export class UserService {
-    public getUsers(): Array<any> {
-        return [
-            { firstName: "Hung", lastName: "To", avatar: "01.jpg" },
-            { firstName: "Thu", lastName: "Ton", avatar: "02.jpg" },
-            { firstName: "Hai", lastName: "Nguyen", avatar: "03.jpg" }
-        ];
+    private iConnector: HttpConnector;
+    constructor(iConnector: HttpConnector) {
+        this.iConnector = iConnector;
+    }
+    public getUsers(): any {
+        return this.iConnector.get("src/api/users.json");
     }
 }

@@ -6,22 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const router_1 = require("@angular/router");
 const core_1 = require("@angular/core");
-const users_1 = require("./users");
-const addNewUser_1 = require("./addNewUser");
-let routes = [
-    { path: "", redirectTo: "users", pathMatch: 'full' },
-    { path: "users", component: users_1.Users },
-    { path: "addNewUser", component: addNewUser_1.AddNewUser }
-];
-let SecurityRoutes = class SecurityRoutes {
+let AddNewUser = class AddNewUser {
+    onAddUser() {
+        console.log(this.firstName);
+    }
 };
-SecurityRoutes = __decorate([
-    core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(routes)],
-        exports: [router_1.RouterModule]
+AddNewUser = __decorate([
+    core_1.Component({
+        templateUrl: "src/addNewUser.html"
     })
-], SecurityRoutes);
-exports.SecurityRoutes = SecurityRoutes;
-//# sourceMappingURL=securityRoutes.js.map
+], AddNewUser);
+exports.AddNewUser = AddNewUser;
+//# sourceMappingURL=addNewUser.js.map

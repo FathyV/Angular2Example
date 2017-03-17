@@ -1,10 +1,6 @@
-<div>
-    <h1>This is User Page</h1>
-    <div class="x_panel">
-        <div class="x_title">
-            <h2>Basic Tables <small>basic table subtitle</small></h2>
-            <div class="clearfix"></div>
-        </div>
+<page>
+    <page-header>This is User Page</page-header>
+    <page-content>
         <div class="x_content">
             <table class="table">
                 <thead>
@@ -21,13 +17,14 @@
                         <td>{{user.lastName}}</td>
                         <td>
                             <img src="src/resources/themes/default/images/{{user.avatar}}" style="max-width: 50px;" alt=""></td>
-<td>
-    <a href="#" onclick="return false;" (click)="showUserSummary(user)">Preview</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-
+                        <td>
+                            <a href="#" onclick="return false;" (click)="showUserSummary(user)">Preview</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </page-content>
+</page>
 <user-summary *ngIf="selectedUser" [(firstName)]="selectedUser.firstName"></user-summary>
+<button class="btn btn-primary" (click)="onAddButtonClicked()">Add New user</button>

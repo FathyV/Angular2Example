@@ -5,23 +5,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const router_1 = require("@angular/router");
-const core_1 = require("@angular/core");
-const users_1 = require("./users");
-const addNewUser_1 = require("./addNewUser");
-let routes = [
-    { path: "", redirectTo: "users", pathMatch: 'full' },
-    { path: "users", component: users_1.Users },
-    { path: "addNewUser", component: addNewUser_1.AddNewUser }
-];
-let SecurityRoutes = class SecurityRoutes {
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-SecurityRoutes = __decorate([
-    core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(routes)],
-        exports: [router_1.RouterModule]
-    })
-], SecurityRoutes);
-exports.SecurityRoutes = SecurityRoutes;
-//# sourceMappingURL=securityRoutes.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+const http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+const core_1 = require("@angular/core");
+let HttpConnector = class HttpConnector {
+    constructor(http) {
+        this.http = http;
+    }
+    get(url) {
+        return this.http.get(url)
+            .map((response) => { return response.json(); });
+    }
+};
+HttpConnector = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], HttpConnector);
+exports.HttpConnector = HttpConnector;
+//# sourceMappingURL=httpConnector.js.map
