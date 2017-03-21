@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { UserService } from "./userService"
-
 @Component({
     templateUrl: "src/users.html"
 })
@@ -12,7 +11,10 @@ export class Users {
 
     constructor(userService: UserService) {
         this.userService = userService;
-        this.users = userService.getUsers();
+        //this.users = userService.getUsers();
+        this.userService.getUsers().subscribe(users => {
+            this.users = users;
+        });
     }
 
     public showUserSummary(user: any) {

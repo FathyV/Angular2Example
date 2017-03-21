@@ -10,28 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const userService_1 = require("./userService");
-let Users = class Users {
-    constructor(userService) {
-        this.users = [];
-        this.userService = userService;
-        //this.users = userService.getUsers();
-        this.userService.getUsers().subscribe(users => {
-            this.users = users;
-        });
-    }
-    showUserSummary(user) {
-        this.selectedUser = user;
-    }
-    onFirstNameChanged(newValue) {
-        this.selectedUser.firstName = newValue;
+let PrimaryButton = class PrimaryButton {
+    constructor() {
+        this.label = null;
+        this.cls = "btn-primary";
     }
 };
-Users = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], PrimaryButton.prototype, "label", void 0);
+PrimaryButton = __decorate([
     core_1.Component({
-        templateUrl: "src/users.html"
-    }),
-    __metadata("design:paramtypes", [userService_1.UserService])
-], Users);
-exports.Users = Users;
-//# sourceMappingURL=users.js.map
+        selector: "primary-button",
+        template: '<form-button [label]="label" [cls]="cls"></form-button>'
+    })
+], PrimaryButton);
+exports.PrimaryButton = PrimaryButton;
+//# sourceMappingURL=primaryButton.js.map
