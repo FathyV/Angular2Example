@@ -10,18 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const httpConnector_1 = require("./httpConnector");
-let UserService = class UserService {
-    constructor(httpConnector) {
-        this.httpConnector = httpConnector;
+const userService_1 = require("src/modules/securityModule/services/userService");
+let Users = class Users {
+    constructor(userService) {
+        this.users = [];
+        this.userService = userService;
+        //this.users = userService.getUsers();
+        this.userService.getUsers().subscribe(users => {
+            this.users = users;
+        });
     }
-    getUsers() {
-        return this.httpConnector.get("src/api/users.json");
+    showUserSummary(user) {
+        this.selectedUser = user;
+    }
+    onFirstNameChanged(newValue) {
+        this.selectedUser.firstName = newValue;
     }
 };
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [httpConnector_1.HttpConnector])
-], UserService);
-exports.UserService = UserService;
-//# sourceMappingURL=userService.js.map
+Users = __decorate([
+    core_1.Component({
+        templateUrl: "src/modules/securityModule/components/users/users.html"
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof userService_1.UserService !== "undefined" && userService_1.UserService) === "function" && _a || Object])
+], Users);
+exports.Users = Users;
+var _a;
+//# sourceMappingURL=users.js.map

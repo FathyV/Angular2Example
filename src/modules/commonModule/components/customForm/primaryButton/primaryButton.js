@@ -10,18 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const httpConnector_1 = require("./httpConnector");
-let UserService = class UserService {
-    constructor(httpConnector) {
-        this.httpConnector = httpConnector;
-    }
-    getUsers() {
-        return this.httpConnector.get("src/api/users.json");
+let PrimaryButton = class PrimaryButton {
+    constructor() {
+        this.label = null;
+        this.cls = "btn-primary";
     }
 };
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [httpConnector_1.HttpConnector])
-], UserService);
-exports.UserService = UserService;
-//# sourceMappingURL=userService.js.map
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], PrimaryButton.prototype, "label", void 0);
+PrimaryButton = __decorate([
+    core_1.Component({
+        selector: "primary-button",
+        template: '<form-button [label]="label" [cls]="cls"></form-button>'
+    })
+], PrimaryButton);
+exports.PrimaryButton = PrimaryButton;
+//# sourceMappingURL=primaryButton.js.map

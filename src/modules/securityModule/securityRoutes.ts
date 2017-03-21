@@ -1,7 +1,8 @@
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { Users } from "./users";
-import { UserService } from "./userService";
+import { Users } from "./components/users/users";
+import { UserService } from "./services/userService";
+import { HttpConnector } from "commonModule/services/httpConnector";
 
 let routes: Routes = [
     { path: "", redirectTo: "users", pathMatch: 'full' },
@@ -11,7 +12,7 @@ let routes: Routes = [
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
-    providers: [UserService]
+    providers: [UserService, HttpConnector]
 })
 
 export class SecurityRoutes { }

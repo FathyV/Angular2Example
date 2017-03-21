@@ -4,13 +4,15 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 
-export class UserService {
-    private http: Http;
+export class HttpConnector {
+    public http: Http;
+
     constructor(http: Http) {
         this.http = http;
     }
-    public getUsers(){
-        return this.http.get("src/api/users.json")
+
+    public get(url: string) {
+        return this.http.get(url)
             .map((response: Response) => { return response.json(); });
     }
 }

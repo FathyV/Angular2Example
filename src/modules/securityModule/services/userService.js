@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const httpConnector_1 = require("./httpConnector");
+const httpConnector_1 = require("commonModule/services/httpConnector");
 let UserService = class UserService {
     constructor(httpConnector) {
         this.httpConnector = httpConnector;
@@ -21,7 +21,8 @@ let UserService = class UserService {
 };
 UserService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [httpConnector_1.HttpConnector])
+    __metadata("design:paramtypes", [typeof (_a = typeof httpConnector_1.HttpConnector !== "undefined" && httpConnector_1.HttpConnector) === "function" && _a || Object])
 ], UserService);
 exports.UserService = UserService;
+var _a;
 //# sourceMappingURL=userService.js.map

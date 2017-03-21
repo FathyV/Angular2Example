@@ -10,18 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const httpConnector_1 = require("./httpConnector");
-let UserService = class UserService {
-    constructor(httpConnector) {
-        this.httpConnector = httpConnector;
+let UserSummary = class UserSummary {
+    constructor() {
+        this.firstName = null;
+        this.firstNameChange = new core_1.EventEmitter();
     }
-    getUsers() {
-        return this.httpConnector.get("src/api/users.json");
+    onFirstNameChanged() {
+        this.firstNameChange.emit(this.firstName);
     }
 };
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [httpConnector_1.HttpConnector])
-], UserService);
-exports.UserService = UserService;
-//# sourceMappingURL=userService.js.map
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], UserSummary.prototype, "firstName", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], UserSummary.prototype, "firstNameChange", void 0);
+UserSummary = __decorate([
+    core_1.Component({
+        selector: "user-summary",
+        templateUrl: "src/modules/securityModule/components/userSummary/userSummary.html"
+    })
+], UserSummary);
+exports.UserSummary = UserSummary;
+//# sourceMappingURL=userSummary.js.map

@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const router_1 = require("@angular/router");
 const core_1 = require("@angular/core");
-const users_1 = require("./users");
-const userService_1 = require("./userService");
-const httpConnector_1 = require("./httpConnector");
+const users_1 = require("./components/users/users");
+const userService_1 = require("./services/userService");
+const httpConnector_1 = require("commonModule/services/httpConnector");
 let routes = [
     { path: "", redirectTo: "users", pathMatch: 'full' },
     { path: "users", component: users_1.Users },

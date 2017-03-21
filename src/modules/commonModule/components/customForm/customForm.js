@@ -5,23 +5,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const httpConnector_1 = require("./httpConnector");
-let UserService = class UserService {
-    constructor(httpConnector) {
-        this.httpConnector = httpConnector;
-    }
-    getUsers() {
-        return this.httpConnector.get("src/api/users.json");
-    }
+let CustomForm = class CustomForm {
 };
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [httpConnector_1.HttpConnector])
-], UserService);
-exports.UserService = UserService;
-//# sourceMappingURL=userService.js.map
+CustomForm = __decorate([
+    core_1.Component({
+        selector: "custom-form",
+        templateUrl: "src/modules/commonModule/components/customForm/customForm.html"
+    })
+], CustomForm);
+exports.CustomForm = CustomForm;
+//# sourceMappingURL=customForm.js.map

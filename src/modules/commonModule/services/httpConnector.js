@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 const core_1 = require("@angular/core");
-const httpConnector_1 = require("./httpConnector");
-let UserService = class UserService {
-    constructor(httpConnector) {
-        this.httpConnector = httpConnector;
+let HttpConnector = class HttpConnector {
+    constructor(http) {
+        this.http = http;
     }
-    getUsers() {
-        return this.httpConnector.get("src/api/users.json");
+    get(url) {
+        return this.http.get(url)
+            .map((response) => { return response.json(); });
     }
 };
-UserService = __decorate([
+HttpConnector = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [httpConnector_1.HttpConnector])
-], UserService);
-exports.UserService = UserService;
-//# sourceMappingURL=userService.js.map
+    __metadata("design:paramtypes", [http_1.Http])
+], HttpConnector);
+exports.HttpConnector = HttpConnector;
+//# sourceMappingURL=httpConnector.js.map

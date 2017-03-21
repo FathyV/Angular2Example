@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { UserService } from "./userService"
+import { UserService } from "src/modules/securityModule/services/userService"
 @Component({
-    templateUrl: "src/users.html"
+    templateUrl: "src/modules/securityModule/components/users/users.html"
 })
 
 export class Users {

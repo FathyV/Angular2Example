@@ -10,18 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const httpConnector_1 = require("./httpConnector");
-let UserService = class UserService {
-    constructor(httpConnector) {
-        this.httpConnector = httpConnector;
-    }
-    getUsers() {
-        return this.httpConnector.get("src/api/users.json");
+let FormButton = class FormButton {
+    constructor() {
+        this.label = null;
+        this.cls = null;
     }
 };
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [httpConnector_1.HttpConnector])
-], UserService);
-exports.UserService = UserService;
-//# sourceMappingURL=userService.js.map
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FormButton.prototype, "label", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FormButton.prototype, "cls", void 0);
+FormButton = __decorate([
+    core_1.Component({
+        selector: "form-button",
+        templateUrl: "src/modules/commonModule/components/customForm/formButton/formButton.html"
+    })
+], FormButton);
+exports.FormButton = FormButton;
+//# sourceMappingURL=formButton.js.map
