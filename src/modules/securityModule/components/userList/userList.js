@@ -10,30 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-let FormButton = class FormButton {
+let UserList = class UserList {
     constructor() {
-        this.label = null;
-        this.cls = null;
-        this.click = null;
+        this.users = null;
+        this.selectedUser = null;
+        this.selectedUserChange = new core_1.EventEmitter();
+    }
+    showUserSummary(user) {
+        this.selectedUser = user;
+        this.selectedUserChange.emit(this.selectedUser);
     }
 };
 __decorate([
     core_1.Input(),
-    __metadata("design:type", String)
-], FormButton.prototype, "label", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], FormButton.prototype, "cls", void 0);
+    __metadata("design:type", Object)
+], UserList.prototype, "users", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
-], FormButton.prototype, "click", void 0);
-FormButton = __decorate([
+], UserList.prototype, "selectedUser", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], UserList.prototype, "selectedUserChange", void 0);
+UserList = __decorate([
     core_1.Component({
-        selector: "form-button",
-        templateUrl: "src/modules/commonModule/components/customForm/formButton/formButton.html"
+        selector: 'user-list',
+        templateUrl: 'src/modules/securityModule/components/userList/userList.html'
     })
-], FormButton);
-exports.FormButton = FormButton;
-//# sourceMappingURL=formButton.js.map
+], UserList);
+exports.UserList = UserList;
+//# sourceMappingURL=userList.js.map

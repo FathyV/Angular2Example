@@ -15,12 +15,13 @@ const users_1 = require("./components/users/users");
 const userSummary_1 = require("./components/userSummary/userSummary");
 const http_1 = require("@angular/http");
 const commonModule_1 = require("src/modules/commonModule/commonModule");
+const userList_1 = require("src/modules/securityModule/components/userList/userList");
 let SecurityModule = class SecurityModule {
 };
 SecurityModule = __decorate([
     core_1.NgModule({
         imports: [http_1.HttpModule, platform_browser_1.BrowserModule, forms_1.FormsModule, securityRoutes_1.SecurityRoutes, commonModule_1.CommonModule],
-        declarations: [defaultPage_1.DefaultPage, users_1.Users, userSummary_1.UserSummary],
+        declarations: [defaultPage_1.DefaultPage, users_1.Users, userSummary_1.UserSummary, userList_1.UserList],
         bootstrap: [defaultPage_1.DefaultPage],
         schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]
     })

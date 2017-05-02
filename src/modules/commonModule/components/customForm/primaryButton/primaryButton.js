@@ -23,7 +23,7 @@ __decorate([
 PrimaryButton = __decorate([
     core_1.Component({
         selector: "primary-button",
-        template: '<form-button [label]="label" [cls]="cls"></form-button>'
+        template: '<form-button [label]="label" [cls]="cls" [click]="click"></form-button>'
     })
 ], PrimaryButton);
 exports.PrimaryButton = PrimaryButton;

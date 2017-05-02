@@ -2,22 +2,9 @@
     <page-header>User Summary</page-header>
     <page-content>
         <custom-form>
-            <custom-form-input [label]="'First Name'" [value]="firstName"></custom-form-input>
+            <custom-form-input [label]="'First Name'" [(value)]="firstName"></custom-form-input>
             <primary-button [label]="'Submit'"></primary-button>
         </custom-form>
+        {{firstName}}
     </page-content>
 </page>
-
-<!--<div class="x_panel">
-    <div class="x_title">
-        <h2>User Summary</h2>
-        <div class="clearfix"></div>
-    </div>
-    <div class="x_content">
-        <br>
-        <custom-form>
-            <custom-form-input [label]="'First Name'" [value]="firstName"></custom-form-input>
-            <primary-button [label]="'Submit'"></primary-button>
-        </custom-form>
-    </div>
-</div>-->

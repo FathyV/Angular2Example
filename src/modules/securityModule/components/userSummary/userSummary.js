@@ -15,13 +15,10 @@ let UserSummary = class UserSummary {
         this.firstName = null;
         this.firstNameChange = new core_1.EventEmitter();
     }
-    onFirstNameChanged() {
-        this.firstNameChange.emit(this.firstName);
-    }
 };
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
+    __metadata("design:type", String)
 ], UserSummary.prototype, "firstName", void 0);
 __decorate([
     core_1.Output(),

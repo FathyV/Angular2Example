@@ -17,10 +17,6 @@ export class Users {
         });
     }
 
-    public showUserSummary(user: any) {
-        this.selectedUser = user;
-    }
-
     public onFirstNameChanged(newValue: string) {
         this.selectedUser.firstName = newValue;
     }

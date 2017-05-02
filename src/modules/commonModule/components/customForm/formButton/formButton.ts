@@ -8,4 +8,5 @@ import { Component, Input } from "@angular/core";
 export class FormButton {
     @Input() label: string = null;
     @Input() cls: string = null;
+    @Input() click: any = null;
 }

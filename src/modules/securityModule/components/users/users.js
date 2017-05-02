@@ -20,9 +20,6 @@ let Users = class Users {
             this.users = users;
         });
     }
-    showUserSummary(user) {
-        this.selectedUser = user;
-    }
     onFirstNameChanged(newValue) {
         this.selectedUser.firstName = newValue;
     }
